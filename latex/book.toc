@@ -1,0 +1,15 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}L'UNIX per i principianti}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Come cominciare}{8}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1} Alcuni prerequisiti a proposito di terminali e di dattilo scrittura}{8}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Un esempio di collegamento in UNIX}{9}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Operazioni di collegamento}{10}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Comandi di battitura}{11}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Comportamento strano del terminale}{12}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}Errori di battitura}{12}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.7}Immissione/emissione contemporanea di testi}{14}{subsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.1.8}Come arrestare un programma}{14}{subsection.1.1.8}%
+\contentsline {subsection}{\numberline {1.1.9}Come scollegarsi}{14}{subsection.1.1.9}%
+\contentsline {subsection}{\numberline {1.1.10}Corrispondenza}{15}{subsection.1.1.10}%
+\contentsline {subsection}{\numberline {1.1.11}Dialoghi tra gli utenti}{16}{subsection.1.1.11}%
