@@ -13,3 +13,14 @@
 \contentsline {subsection}{\numberline {1.1.9}Come scollegarsi}{14}{subsection.1.1.9}%
 \contentsline {subsection}{\numberline {1.1.10}Corrispondenza}{15}{subsection.1.1.10}%
 \contentsline {subsection}{\numberline {1.1.11}Dialoghi tra gli utenti}{16}{subsection.1.1.11}%
+\contentsline {subsection}{\numberline {1.1.12}Servizio informazioni}{17}{subsection.1.1.12}%
+\contentsline {subsection}{\numberline {1.1.13}Il Manuale di programmazione}{17}{subsection.1.1.13}%
+\contentsline {subsection}{\numberline {1.1.14}Addestramento con il calcolatore}{17}{subsection.1.1.14}%
+\contentsline {subsection}{\numberline {1.1.15}Giochi}{18}{subsection.1.1.15}%
+\contentsline {section}{\numberline {1.2}Operazioni quotidiane: file e comandi più comuni}{18}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Creazione di file: il programma ``editor''}{18}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Quali sono i file esistenti?}{20}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Stampa di file: i comandi \textit {cat} e \textit {pr}}{21}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Ridenominazione, copiatura e cancellazione di file: {\tt mv, cp, rm}}{23}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Cosa comprende il nome di un file?}{24}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Qualche comando utile}{24}{subsection.1.2.6}%

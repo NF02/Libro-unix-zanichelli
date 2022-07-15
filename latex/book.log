@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  15 JUL 2022 01:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  16 JUL 2022 01:38
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **book.tex
 (./book.tex
@@ -1456,64 +1455,175 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] (./book.toc)
+] (./book.toc
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
+4.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+))
 \tf@toc=\write5
 \openout5 = `book.toc'.
 
+ [3] [4
 
-[3] [4
-
-] (./book.lol)
+]
+(./book.lol)
 \tf@lol=\write6
 \openout6 = `book.lol'.
 
- [5] [6
+ (./pag/L'UNIX per i principianti.tex [5] [6
 
 ]
 Capitolo 1.
 [7] [8]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-08.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \hbox (7.03311pt too wide) in paragraph at lines 223--224
+Overfull \hbox (7.03311pt too wide) in paragraph at lines 124--125
 []\T1/cmr/m/n/10 Messaggio suc-ces-
  []
 
 [9] [10] [11]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-363.
+264.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 362--364
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
 
  []
 
 [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-[16] (./book.aux)
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 460--461
 
-Package rerunfilecheck Warning: File `book.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+ []
 
-Package rerunfilecheck Info: Checksums for `book.out':
-(rerunfilecheck)             Before: E4B5DE2131509FB26F07606D5C63BA11;2521
-(rerunfilecheck)             After:  DBDACB0DFC99848AE0BFAD5443EDA1A9;2708.
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
+
+ []
+
+[17] [18]
+
+Package multicol Warning: Using `1' columns doesn't seem a good idea.
+ I therefore use two columns instead on input line 588.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \hbox (badness 10000) in paragraph at lines 589--602
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--602
+
+ []
+
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 684--694
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--734
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--734
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--734
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 742--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--783
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--783
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 785--795
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 785--795
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--821
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 842--849
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--866
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--866
+
+ []
+
+[25])
+Underfull \hbox (badness 10000) in paragraph at lines 872--101
+
+ []
+
+[26] (./book.aux)
+Package rerunfilecheck Info: File `book.out' has not changed.
+(rerunfilecheck)             Checksum: 857884C76EF95799B42F7780517C8B1B;5305.
  ) 
 Here is how much of TeX's memory you used:
- 43919 strings out of 478268
- 972619 string characters out of 5846348
- 1675881 words of memory out of 5000000
- 61432 multiletter control sequences out of 15000+600000
- 491838 words of font info for 85 fonts, out of 8000000 for 9000
+ 43964 strings out of 478268
+ 973324 string characters out of 5846348
+ 1676881 words of memory out of 5000000
+ 61448 multiletter control sequences out of 15000+600000
+ 492850 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,89p,477b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,89p,477b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -1532,24 +1642,26 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/
 usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
-/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2
-022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/202
-2/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2022/te
-xmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texm
-f-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on book.pdf (16 pages, 303838 bytes).
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/l
+ocal/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texli
+ve/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive
+/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/202
+2/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2022/te
+xmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2022/texm
+f-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on book.pdf (26 pages, 390601 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 298 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
