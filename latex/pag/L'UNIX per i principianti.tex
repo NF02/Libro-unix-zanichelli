@@ -873,4 +873,288 @@ A questo scopo dovrete procedere come segue:\\\\
 Il comando grep esegue anche l'operazione inversa rispetto a quella sopra esposta; va-
 le a dire che può analizzare il file per escludere le parti corrispondenti a uno schema
 prestabilito. Per far ciò basta utilizzare con grep l'opzione -v (il nome deriva dall'op
-zione v del comando editor). Servendoci ancora dell'esempio precedente:
+zione v del comando editor). Servendoci ancora dell'esempio precedente:\\\\
+\$ grep -v fleas poem\\
+upon their backs to bite 'em.\\
+and so ad infinitum.\\
+While these again have greater still.\\
+and greater still, and so on.\\
+\$\\\\
+Con il comando grep si possono analizzare contemporaneamente più file e il sistema
+antepone il nome del file relativo ad ogni riga risultante dalla sua analisi, cosicché
+l'utente sappia sempre a quale file appartiene il testo prodotto. Vi sono poi opzioni
+per contare, numerare e via di seguito. Inoltre, il comando grep è in grado di gestire
+schemi molto più complessi di quello sopra esemplificato riguardante la semplice 
+ricerca o esclusione di una parola come "fleas"; ma vi rimandiamo, per una più 
+approfondita trattazione di questo comando, al capitolo 4.\\
+Il terzo comando che vi sottoponiamo è sort il quale dispone il file in ordine alfabe.
+tico di riga. Questo comando non è particolarmente utile con le poesie, ma ricorreremo
+ugualmente alla poesia dell'esempio fin qui usato solo per dimostrarvi come funziona:\\\\
+\$ sort poem\\
+and greater still, and so on\\
+and so ad infinitum.\\
+have greater fleas to go on;\\
+upon their backs to bite 'em.\\
+And little fleas have lesser fleas,\\
+And the great fleas themselves, in turn.\\
+Great fleas have little fleas\\
+While these again have greater still.\\
+\$\\\\
+L'ordinamento avviene riga per riga, ma per default il sistema dispone prima gli spazi, 
+poi le righe che iniziano con una lettera minuscola e infine quelle che incominciano 
+con la lettera maiuscola. Perciò, l'ordine alfabetico risultante non è rigoroso.\\
+Il comando sort ha innumerevoli opzioni che consentono di disporre i dati in base a
+ordini differenti: numerico, alfabetico come da dizionario, ignorando gli spazi iniziali, 
+e anche effettuando la selezione sui campi interni alle righe, ecc. Bisogna però 
+verificare sempre la funzione di queste opzioni prima di usarle per essere sicuri di 
+utilizzare quella che ci serve in un determinato momento.\\
+Ve ne indichiamo qui di sequito alcuni tra le più comuni:
+\begin{multicols}{2}
+	sort -r\\
+	sort -n\\
+	sort -nr\\
+	sort -f\\\\\\
+	sort + n \\
+	{\it inverte l'ordine normale}\\
+	\textit{Seleziona in ordine numerico}\\
+	\textit{Seleziona in ordine numerico inverso} \\
+	\textit{Seleziona in ordine alfabetico senza considerare}\\
+	\textit{le priorità di default delle lettere maiuscole e minuscole}\\
+	\textit{Seleziona partendo da n + il primo campo}
+\end{multicols}
+Al capitolo 4 forniremo altre informazioni relativamente al comand {\tt sort}.\\
+Un altro comando che effettua l'analisi di un file è il {\tt tail} (letteralmente coda) che ne stanpa le ultime dieci righe.  Questo comando è evidentemente sovradimensioniato per la nostra poesia di 8 righe, ma è molto utile con i file più lunghi. Inoltre, {\tt tail} ha un'opzione che consente di specificare il numero di righe volute; per esempio, per stampare l'ultima riga della poesia di cui al nostro esempio:\\\\
+\$ tail -1 poem\\
+and greater still, and so on.\\
+\$\\\\
+{\tt tail} può anche servire per stampare 10 righe partendo da una specificata (non necessariamente la prima delle ultime 10), così:\\\\
+
+e la stampa partirà dalla terza riga del file (notate la naturale inversione del segno meno solitamente anteposto agli argomenti di un file).\\
+Gli ultimi due comandi dei quali vogliamo parlare servono per confrontare dei file tra di loro.  Supponiamo di avere una variante al testo della poesia nel file che abbiamo denominato {\tt new\_poem} (nuova-poesia):\\\\
+\$ cat poem 
+\begin{center}
+	Great fleas have little fleas\\
+	upon their backs to bite 'em,\\
+	and so ad infinitum.\\
+	And the great fleas to go on;\\
+	have greater fleas to go on;\\
+	While these again have greater still,\\
+	and greater still, and so on.
+\end{center}
+\$ cat new\_poem
+\begin{center}
+	Great fleas have little fleas\\
+	upon their backs to bite them,\\
+	and so on ad infinitum.\\
+	And the great fleas to go on;\\
+	have greater fleas to go on;\\
+	While these again have greater still,\\
+	and greater still, and so on.
+\end{center}
+\$\\\\
+Come vedete, non c'è molta differenza tra i due file e, in effetti, è necessario leggere
+molto attentamente i due testi per scoprire le variazioni. Sono questi i casi in cui è comodo avere a disposizione i comandi per il confronto dei file. Il comando cmp segnala il primo punto in cui due file differiscono:
+\begin{multicols}{2}
+	\$ cmp poem new poem\\
+	poem new poem differ: char 58, line 2\\
+	\$\\\\
+	({\it le due poesie diferiscono al carattere 58, riga 2})
+\end{multicols}
+Con questo comando il sistema ci dice che le due poesie sono diverse alla seconda riga, il che è abbastanza vero, ma non ci specifica di quale differenza si tratti e poi non
+segnala ulteriori diversità perché la sua funzione è quella di evidenziare solo la prima
+modifica incontrata.
+L'altro comando di confronto dei file è \texttt{diff}, che segnala tutte le righe modificate,
+aggiunte o cancellate:\\\\
+\$ diff poem new\_poem\\
+\begin{tabular}{ll}
+	2c2\\
+	<& upon their backs to bite 'em,\\
+	\dots&\\
+	>&upon their backs to bite them,\\
+	\dots \\
+	4c4\\
+	<&and so ad infinitum.\\
+	\dots\\
+	>& and so on ad infinitum.\\
+	\$
+\end{tabular}
+Qui il sistema ci dice che la seconda riga del primo file (denominato poem) deve essere
+cambiata come da testo della riga due del secondo file (denominato new.poem, e lo
+stesso dicasi per la quarta riga.\\
+In generale il comando cmp si usa quando si vuole essere sicuri che due file abbiano
+lo stesso contenuto. E veloce e funziona con ogni tipo di file (non solo con i file di testi). diff si usa quando si ritiene che i file siano in qualche modo diversi e si vuole sapere esattamente quali sono le righe che differiscono. Funziona solo con i file di testi.
+\subsection{Un riassunto dei comandi per la gestione dei file}
+Alla tabella 1.1 diamo una sintesi dei comandi visti finora per la gestione dei file.\\
+\begin{tabular}{|ll|}
+	\hline
+	&\textbf{Tabella 1.1} \textit{Comandi più comuni del sistera di gestione dei file.}\\
+	ls&elenca tutti i file dell'area di lavoro in cui ci si trova\\
+	Is nome file& elenca solo i file di cui sono stati indicati i nomi\\
+	ls -f &elenca i file in ordine cronologico, i più recenti vengono
+	elencati per primi\\
+	Is -l &fornisce un elenco articolato dei file: vale a dire con più\\
+			& informazioni; anche Is -It\\
+	ls -u & clenca i file in ordine di utilizzo; viene elencato per primo\\
+			& quello usato per ultimo; anche Is -lu, Is -lut\\
+	ls -r & elenca i file in ordine inverso; anche -rt, rtl, ecc.\\
+	ed {\it nome file} & effettua operazioni di edit sul file indicato\\
+	cp \textit{file1 file2} & copia il file I nel file 2; se esiste un vecchio file 2,\\
+									& il comando lo annulla scrivendo il nuovo testo sopra al\\
+									& precedente\\
+	mv \textit{file1 file 2}& sposta il file 1 nel file 2; se esiste il vecchio file 2,\\
+	&il comando lo annulla scrivendovi sopra il nuovo testo\\
+	rm \textit{nome file}&elimina irrevocabilmente i file di cui si è indicato il nome\\
+	cat \textit{nome file}& stampa il contenuto di tutti i file indicati\\
+	pr \textit{nome file} &stampa il contenuto dei file con una testata iniziale\\
+	&(\texttt{la pagina è di 66 righe})\\
+	pr-n \textit{nome file}&stampa i file in \textit{n} colonne\\
+	pr-m \textit{nome file} &stampa i file di cui è indicato il nome sotto forma di\\
+	&colonne multiple\\
+	wc \textit{nome file} & conta le righe, le parole e i caratteri di ogni file\\
+	wc -I \textit{nome file} & conta le righe di ogni file \\
+	grep \textit{schema nome file} & stampa le righe in cui ricorre lo schema indicato\\
+	grep -v \textit{schema file} & stampa solo le righe in cui non ricorre lo \textit{schema
+	indicato}\\
+	sort \textit{nome file} &elenca i file in ordine alfabetico riga per riga\\
+	tile \textit{nome file} & stampa le ultime 10 righe di un file\\
+	tail-n \textit{nome file} & stampa le ultime \textit{n} righe di un file\\
+	tail + n \textit{nome file} &incomincia la stampa del file a partire dalla riga \textit{n}\\
+	emp \textit{file1 file2} & stampa il primo punto in cui i due file indicati si differenziano\\
+	diff  \textit{file1 file2} &stampa tutte le differenze esistenti nei due file indicati\\ & \\
+\hline
+\end{tabular}
+
+\section{Altre informazioni sui file: le aree di lavoro e i relativi indici (directories)}
+Il sistema è in grado di distinguere il file denominato junk da file di altri utenti aventi
+eventualmente lo stesso nome. Tale sua capacità è data dal fatto che i vari file vengono raggruppati in particolari aree di lavoro, per le quali vengono predisposti degli indici; come se fossero libri posti sugli scaffali delle librerie. In tal modo i file apparte
+nenti ad aree diverse possono avere lo stesso nome senza essere in conflitto tra loro.\\
+In generale, ogni utente ha un'area personale, o area base (home directory), che può
+anche essere denominata area di collegamento. Essa contiene solo i file di un determi
+nato utente. Al momento del collegamento, ci si trova nella propria area base.\\
+L'utente ha la possibilità di spostarsi dall'area in cui sta lavorando, spesso chiamata
+area di lavoro corrente, ma l'area base è sempre la stessa. A meno che non vengano
+date istruzioni diverse, ogniqualvolta si crea un nuovo file, esso viene inserito
+nell'area di lavoro corrente. Poiché quest'ultima, inizialmente, è anche l'area base, il
+file creato non viene posto in relazione con eventuali altri file che hanno lo stesso
+nome ma che appartengono ad aree di altri utenti.\\
+Un'area di lavoro può contenere sia dei file sia altre aree di lavoro (per parafrasare
+la poesia dell'esempio "Le grosse aree hanno aree più piccole...."). Il modo più 
+semplice per dare un'immagine chiara di questo tipo di organizzazione è di paragonarla a
+un albero costituito di aree di lavoro e di file. È possibile percorrere questo albero,
+per ricercare qualunque file esistente nel sistema, partendo dalla radice e spostandosi
+poi lungo i rami adeguati. Inoltre, è possibile l'operazione inversa, ovvero la 
+partenza da un punto qualsiasi dell'albero per arrivare alla radice.\\
+Vediamo di provare quest'ultimo modo di procedere. A questo fine lo strumento
+fondamentale è il comando pwd (print working directory - stampare l'indice dell'area
+di lavoro corrente) che stampa il nome dell'area in cui state lavorando:\\\\
+\$ pwd\\
+/usr/alba\\
+\$\\\\
+Con quanto sopra, il sistema vi dice che state lavorando nell'area di lavoro
+denominata col vostro nome in codice (alba) e nell'area denominata usr, che, a sua volta, si
+trova nell'area radice, convenzionalmente indicata col segno della barra: /. La barra
+separa le componenti del nome; il limite di 14 caratteri precedentemente menzionato
+vale per tutte le componenti del nome. In molti sistemi, l'area denominata /usr è quel
+la che contiene le aree di tutti i consueti utenti del sistema. (Anche se la vostra area
+base non fosse denominata /usr/alba, con il comando pwd il sistema stamperà qualcosa
+di analogo, cosicché dovreste essere in grado di seguire quanto appresso indicato).
+Se ora battete:\\\\
+\$ Islusrlalba\\\\
+otterrete esattamente la stessa lista di nomi di file che otterreste con il semplice
+comando Is.\\
+Quando non vengono dati degli argomenti, il sistema, con il comando ls fornisce
+l'indice dell'area di lavoro corrente; se viene dato come argomento il nome di un'area
+di lavoro, ne emette l'indice relativo.\\
+Come prossimo passo provate a dare il seguente comando:\\\\
+\$ Is/usr\\\\
+Il sistema risponde con una lunga lista di nomi, tra i quali v'è anche quello della vostra 
+area base, vale a dire alba.\\
+Il passo successivo è quello di cercare di ottenere l'indice della radice stessa. La
+sposta che otterrete sarà presumibilmente simile alla seguente:\\\\
+§Is/\\
+bin\\
+boot\\
+dev\\
+etc\\
+Ilb\\
+tmp\\
+unix\\
+usr\\
+\$\\\\
+(Non lasciatevi confondere dai due significati della barra: infatti essa è sia il nome
+della radice sia un elemento separatore all'interno di nomi di file). La maggior parte
+dei nomi sopra indicati si riferisce a delle aree di lavoro, mentre il nome unix è, in 
+effetti, un file contenente la forma eseguibile del nucleo centrale dell'UNIX. Parleremo
+più approfonditamente di questo argomento al capitolo 2\\
+Ed ora provate\\\\
+\$ cat/usr/alba/junk\\\\
+(se junk si trova ancora nella vostra area di lavoro). Il nome\\\\
+/usr/alba/junk\\\\
+viene definito pathname del file. Esso rappresenta l'insieme dei nomi di aree di lavoro 
+costituenti il percorso che va dalla radice all'area in cui si trova il file. In generale,
+con il sistema UNIX, dovunque sia possibile usare un normale nome di file, è possibile 
+servirsi anche di tale sequenza di nomi (pathname).\\
+L'insieme dei file e delle aree di lavoro è strutturato come un albero genealogico;
+ne diamo una rappresentazione grafica che serve a chiarire il concetto.
+\begin{center}
+	\Tree[./ bin dev etc [.usr [.alba junk ] mike [.paul junk temp ] [.mary junk data ] ] tmp unix boot ]
+\end{center}
+Come si evince dalla figura, il vostro file denominato junk non ha alcuna relazione
+con i file di Paul o di Mary.\\
+La possibilità di impiegare le sequenze di nomi di cui abbiamo parlato, può anche
+non sembrarci interessante nel caso in cui tutti i file che ci servono si trovino nella 
+nostra area di lavoro; diventa però estremamente utile quando più utenti lavorano a
+uno stesso progetto contemporaneamente. Per esempio, i vostri colleghi potrebbero
+stampare il vostro file junk dando al sistema il seguente messaggio:\\\\
+\$ cat/usr/alba/junk\\\\
+Analogamente, voi potreste sapere quali sono i file di Mary scrivendo:\\\\
+\$ Is lusrlmary\\
+data\\
+iunk\\
+\$\\\\
+o farvi la vostra copia di uno dei suoi file:\\\\
+\$ cp /sr/marv/data data\\\\
+o, ancora, fare delle operazioni di editing su uno dei suoi file:\\\\
+\$ ed /usr/mary/data\\\\
+Naturalmente è possibile, nel caso lo si voglia, proteggere la riservatezza dei file. 
+Infatti, per ogni file che si intende proteggere, possono esistere dei particolari codici di
+accesso per l'esecuzione di lavori o operazioni di lettura/scrittura, assegnabili sia al
+proprietario, sia a eventuali singoli utenti o gruppi. (Ricordate -ls-1). Sul nostro sistema, 
+la maggior parte degli utenti trova utile poter accedere liberamente ai file, ma le
+norme possono essere diverse sul vostro; perciò torneremo su questo argomento al
+capitolo 2.\\
+Come ultimo gruppo di esperimenti provate quanto segue:\\\\
+\$ Is /bin /usr/bin\\\\
+Qualcuno dei nomi elencati nella lista che appare a seguito del comando suddetto vi è
+noto? Ouando date un comando battendone il relativo nome, dopo avere avuto il via
+dal sistema, quest'ultimo, in primo luogo, va alla ricerca di un file con quel nome
+Normalmente lo cerca prima nell'area in cui state lavorando (dove probabilmente
+non lo trova), poi nell'area bin e, infine, nell'usr/bin. I comandi quali cat o Is non hanno 
+nulla di speciale, tranne il fatto di essere stati raggruppati in un paio di aree di lavoro 
+per facilitarne l'individuazione e la gestione. Per verificare quanto detto, prova
+te a eseguire alcuni di questi programmi scrivendone le relative sequenze di nomi
+complete.\\\\
+\$ /bin/date\\
+\texttt{Mon Sep 26 23:29:32 EDT 1983}\\
+\$ /bin/who\\
+\begin{tabular}{llc}
+	sim & tty1 &Sep 26 22:20\\
+	cvw& tty4 &Sep 26 22:40\\
+	alba & tty5 & Sep 26 23:04
+\end{tabular}\\
+\$
+\begin{eser}
+	Provate quanto segue:\\
+	\begin{multicols}{2}
+		\$ Is lusr/games\\
+		(games = giochi)
+	\end{multicols}
+	e fate qualunque cosa vi venga naturale. Questi esercizi possono essere più divertenti al di fuori del norma-
+	le orario di lavoro.
+\end{eser}
+\subsection{Cambio di area di lavoro: \texttt{cd}}
+Se lavorate regolarmente con l'utente Mary utilizzando le informazioni che si trovano 
+nell'area di lavoro che la riguarda, potete dire al sistema "Voglio lavorare con i file 
+di Mary invece che con i miei'. Lo potete fare cambiando area di lavoro con il comando 
+cd:\\\\
+\$ cd /usr/mary\\\\

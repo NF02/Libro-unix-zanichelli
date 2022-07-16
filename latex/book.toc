@@ -24,3 +24,6 @@
 \contentsline {subsection}{\numberline {1.2.4}Ridenominazione, copiatura e cancellazione di file: {\tt mv, cp, rm}}{23}{subsection.1.2.4}%
 \contentsline {subsection}{\numberline {1.2.5}Cosa comprende il nome di un file?}{24}{subsection.1.2.5}%
 \contentsline {subsection}{\numberline {1.2.6}Qualche comando utile}{24}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Un riassunto dei comandi per la gestione dei file}{29}{subsection.1.2.7}%
+\contentsline {section}{\numberline {1.3}Altre informazioni sui file: le aree di lavoro e i relativi indici (directories)}{30}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Cambio di area di lavoro: \texttt {cd}}{33}{subsection.1.3.1}%

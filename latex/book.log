@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  16 JUL 2022 01:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.9)  17 JUL 2022 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1599,23 +1599,248 @@ Underfull \hbox (badness 10000) in paragraph at lines 851--866
 
  []
 
-[25])
-Underfull \hbox (badness 10000) in paragraph at lines 872--101
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 872--913
 
  []
 
-[26] (./book.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--913
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--913
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--913
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--913
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 913--924
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 913--924
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--931
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--931
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--931
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 925--931
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 932--935
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 954--958
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 958--962
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--986
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1099
+
+ []
+
+[29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (24.53406pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/10 1.3.  ALTRE INFORMAZIONI SUI FILE: LE AREE DI LAVORO E I RELATI
+VI INDICI (DIRECTORIES) \T1/cmr/m/n/10 31
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1146
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1147--1149
+
+ []
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 1155.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 1156--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1156--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1156--101
+
+ []
+
+
+Overfull \hbox (24.53406pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/10 1.3.  ALTRE INFORMAZIONI SUI FILE: LE AREE DI LAVORO E I RELATI
+VI INDICI (DIRECTORIES) \T1/cmr/m/n/10 33
+ []
+
+[33] (./book.aux)
 Package rerunfilecheck Info: File `book.out' has not changed.
-(rerunfilecheck)             Checksum: 857884C76EF95799B42F7780517C8B1B;5305.
+(rerunfilecheck)             Checksum: 8C87C106EA63F86D8AD4C543DBEFE33B;6350.
  ) 
 Here is how much of TeX's memory you used:
- 43964 strings out of 478268
- 973324 string characters out of 5846348
- 1676881 words of memory out of 5000000
- 61448 multiletter control sequences out of 15000+600000
+ 44356 strings out of 478268
+ 980305 string characters out of 5846348
+ 1692880 words of memory out of 5000000
+ 61829 multiletter control sequences out of 15000+600000
  492850 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,89p,477b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,89p,538b,840s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
 , replaced by a fixed one
@@ -1658,10 +1883,10 @@ xmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2022/texmf-
 dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-di
 st/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on book.pdf (26 pages, 390601 bytes).
+Output written on book.pdf (33 pages, 414384 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 229 words of extra memory for PDF output out of 10000 (max. 10000000)
 
