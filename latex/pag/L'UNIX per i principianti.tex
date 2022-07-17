@@ -1158,3 +1158,74 @@ nell'area di lavoro che la riguarda, potete dire al sistema "Voglio lavorare con
 di Mary invece che con i miei'. Lo potete fare cambiando area di lavoro con il comando 
 cd:\\\\
 \$ cd /usr/mary\\\\
+Il comando \texttt{cd} non seguito da altro, nell'esempio sopra indicato vi
+riportare alla vostra area di base, cioè nell'area in cui vi trovavate al
+momento del collegamento (\textit{log-in}).\\
+Una volta che il libro è stato pubblicato, potete eliminare i file, Per l'area
+denominata \texttt{book}, dovete eliminare tutti i file relativi (vi
+indicheremo tra breve un metodo veloce per farlo) e poi, con il comando
+\texttt{cd}, potete tornare all'area di lavoro di livello immediatamente
+superiore a quello dell'area \texttt{book} e battere:
+	\begin{multicols}{2}
+		\$ rmdir book
+	\end{multicols}
+
+Il comando \texttt{rmdir} eliminerà solo un'area di lavoro vuota.
+
+\section{L'interprete (\textit{shell})}
+Quando il sistema vi dà il via a battere dei comandi (con il segno del dollaro
+nel nostro caso) e voi date dei comandi che vengono eseguiti, non è il nucleo
+centrale che dialoga con voi, ma un programma intermediario chiamato interprete
+o \textit{shell}. L'interprete non è altro che un normale programma così come
+\texttt{date} o \texttt{who}, anche se può fare cose notevoli. Questo
+intermediario tra voi e le capacità elaborative del nucleo centrale è
+estremamente vantaggioso, e fra poco vi parleremo di alcune fra le possibilità
+applicative che consente, Le tre principali sono:
+\begin{itemize}
+	\item Abbreviazione di nomi di file: è possibile sostituire a più nomi di
+		file, che devono costituire gli argomenti di un programma, una modalità
+		che li sintetizzi: l'interprete, seguendo tale motalità, trovarà i nomi
+		dei file interessati.
+	\item Indirizzamento dell'input/output (immissione/emissione): è possibile
+		far si che l'output di un qualsiasi programma vada a finire in un file
+		invece che su un termnale, o viceversa, per quel che riguarda l'input.
+		Inoltre, le immissioni ed emissioni possono essere direttamente inviate
+		ad altri programmi.
+	\item Personalizzazione dell'ambiente: è possibile definire dei comandi e
+		delle abbreviazioni personali.
+\end{itemize}
+\subsection{Abbreviazioni dei nomi di file}
+Parliamo anzitutto delle modalità di indicazione o raggruppamento di più file.
+Supponete di avere in corso la battitura di un documento lungo, come potrebbe
+essere un libro. Logicamente, tale libro si dividerà in tanti piccole parti,
+per esempio in capitoli e anche in paragrafi. È bene dividere il documento
+anche fisicamente, perché è macchinoso effettuare l'editing di file molto
+lunghi. Pertanto, il documento deve essere battuto in tanti file separati. Si
+può scegliere di avere un file per ogni capitolo, rispettivamente
+\texttt{ch1,ch2,ecc.} (\texttt{ch} sta per \textit{chapter}: capitolo, in
+inglese).\\ 
+Oppure, se per ogni capitolo dovessimo esservi dei paragrafi, si possono creare
+dei file chiamati:\\\\
+{\tt ch1.1\\ ch1.2\\ ch1.3 \\ \dots\\ ch2.1\\ ch2.2\\ \dots}\\\\
+che corrisponde al tipo di impostazione data al nostro libro, Se,
+nell'assegnare i nomi ai file si segue un metodo sistematico, è possibile
+conoscere a prima vista la collocazione di un determinato file rispetto
+all'intero libro.\\
+Vediamo cosa fare se si vuole stampare tutto il libro. Si potrebbe dire:\\\\
+\textit{\$ pr ch1.1 ch1.2 ch1.3\dots}\\\\
+ma ci si stancherebbe presto di battere nomi di file e si incomincierebbe a
+fare degli errori. Sono quindi questi i casi in cui è comodo poter effettuare
+le abbreviazioni. Se date il seguente comando:\\\\
+\textit{\$ pr ch*}\\\\
+l'interprete assegna all'asterisco il significato: ``qualunque stringa di
+caratteri'': perciò, con la notazione sintetica \texttt{ch*} si indicano tutti
+i nomi di file che, nell'area in cui si sta lavorando, incominciano con
+\texttt{ch}.\\
+L'interprete crea l'elenco in ordine alfabetico\footnote{Anche in questo caso
+l'ordine non è strettamente alfabetico, in quanto i nomi con le iniziali
+maiuscole vengono elencati prima di qquelli con le iniziali minuscole.\\ Vedere
+il manuale alla voce ascii (7) per capire come vengono ordinati i caratteri con
+il comando \texttt{sort}}, e lo passa al comando \texttt{pr}, Quando ultimo non
+vede mai l'asterisco: la modalità usata per raggruppare i file viene risolta a
+livello dell'interprete e genera un elenco di stringhe che vengono passate al
+comando \texttt{pr}.
