@@ -1228,4 +1228,89 @@ il manuale alla voce ascii (7) per capire come vengono ordinati i caratteri con
 il comando \texttt{sort}}, e lo passa al comando \texttt{pr}, Quando ultimo non
 vede mai l'asterisco: la modalità usata per raggruppare i file viene risolta a
 livello dell'interprete e genera un elenco di stringhe che vengono passate al
-comando \texttt{pr}.
+comando \texttt{pr}.\\
+Il perché di quanto sopra è dato dal fatto che la possibilità di abbreviazione non è una proprietà del comando pr, ma un servizio dell'interprete. Pertanto si può usare tale servizio, con qualsiasi comando. Per esempio, per contare le parole del primo capitolo:\\\\
+{\it \$ wc ch1.*}
+\begin{multicols}{3}
+	113\\ 935\\ 974\\ 378\\ 1293\\ 33\\ 75\\ 3801\\ 562\\
+	4081\\ 4191\\ 1561\\ 5298\\ 194\\ 323\\ 16210\\ 
+	3200 ch1.0\\ 22435 ch1.1\\ 22756 ch1.2\\ 8481 ch1.3\\
+	28841 ch1.4\\ 1190 ch1.5\\ 2030 ch1.6\\ 88933 totale
+\end{multicols}
+\$\\\\
+Esiste un programma, chiamato echo, particolarmente valido per fare esperimenti
+onde capire a fondo i caratteri che servono per effettuare le abbreviazioni. Come
+avrete capito, l'echo non fa altro che ripetere i propri argomenti:\\\\
+{\it \$ echo hello world}\\
+hello world\\
+\$\\\\
+Ma gli argomenti possono essere generati sviluppando una modalità di raggruppamento. Infatti, il comando:\\\\
+{\it \$ echo ch1.*}\\\\
+elenca i nomi di tutti i file del capitolo 1,\\\\
+{\it \$ echo *}\\\\
+elenca, in ordine alfabetico, {\it tutti} i nomi dei file dell'area in cui si sta lavorando.\\\\
+{\it \$ pr*}\\\\
+stampa tutti i vostri file (in ordine alfabetico) e\\\\
+{\it rm *}\\\\
+elimina tutti i file che si trovano nell'area di lavoro in cui state operando. (attenzione
+di essere veramente certi di voler usare proprio quel comando!).\\
+L'asterisco non deve necessariamente essere messo all'ultima posizione di un nome
+di file. Si può posizionare ovunque si voglia, e può anche essere ripetuto. Così:\\\\
+{\it rm *.save}\\\\
+elimina tutti i file che finiscono con. save.\\
+Facciamo notare che i nomi di file vengono selezionati in ordine alfabetico, che è
+diverso dall'ordine numerico. Infatti, se il libro ha 10 capitoli, l'ordine risultante potrebbe non essere quello da voi voluto, perché ch10 verrebbe elencato prima di ch2:\\\\
+\$ echo *\\
+ch1.1 ch1.2 \dots{} ch10.1 ch10.2 \dots{} ch2.1 ch2.2 \dots\\
+\$\\\\
+L'asterisco non è l'unico dispositivo di questo genere fornito dall'interprete, anche se
+è di gran lunga il più usato. Con la modalità di inserire dei caratteri tra parentesi quadre [\dots] si ottiene l'abbinamento fra i caratteri posti tra le parentesi e quelli dei file. Si
+possono così abbreviare delle serie di lettere consecutive o numeri:
+\begin{multicols}{2}
+	{\it \$ pr ch[12346789]*\\ \$ pr ch[1-46-9]*\\ \$ rm temp[a-z]\\ Stampa i capitoli 1,2,3,4,6,7,8,9, ma non il 5\\ Come sopra\\ eElimina tutti i file {\tt tempa, \dots{}, tempz} esistenti}
+\end{multicols}
+
+Con il punto interrogativo? si effettua l'abbinamento con qualunque carattere singolo:
+\begin{multicols}{2}
+	\$ ls ?\\\\
+	\$ ls -l ch?.1\\
+	\$ rm temp?\\
+	Elenca tutti i file che hanno per nome n unico rarattere\\
+	Elemnca {\tt ch1.1 ch2.1 ch3.1}, ecc. non {\tt ch10.1}\\
+	Elimina i \textit{file} temp1, \dots, tempo, ecc. 
+\end{multicols}
+Notate che con queste modalità o convenzioni, le operazioni di abbinamento si possono eseguire solo se vengono indicati come argomenti di file esistenti. In particolare,
+non si possono creare nuovi nomi di file con tale metodologia. Per esempio, se si vuole allungare il nome ch trasformandolo in chapter per ogni file, non si può farlo nel
+modo seguente:
+\begin{multicols}{2}
+	\$ mv ch.* chapter.*\\ Non funziona
+\end{multicols}
+perché il nome chapter * non è assegnato a nessuno dei file esistenti.\\
+I simboli, quali l'asterisco, possono essere usati anche nelle sequenze di nomi oltre
+che con i nomi di file singoli; in tal caso le operazioni di abbinamento vengono eseguite per ogni componente del percorso che contenga uno di tali simboli. Cosi
+lusr/mary/* effettua le operazioni di accoppiamento nelle aree di lavoro /usr/mary, e
+lusr/calendar genera una lista di sequenze di nomi dei file denominati calendar di tutti gli utenti.
+Se volete far si che i caratteri *, ?, ecc., non siano interpretati come modalità di raggruppamento, dovete racchiuderli tra due apici, come nel caso seguente:
+\begin{multicols}{2}
+	\$ ls ´?'
+\end{multicols}
+È anche possibile farli precedere da una barra rovesciata:
+\begin{multicols}{2}
+	\$ ls \textbackslash?
+\end{multicols}
+(Ricordate che, poiché il simbolo ? non è un carattere di cancellazione o annullamento, questa barra rovesciata viene interpretata dal programma interprete e non dal nucleo centrale). L'argomento "'apici" viene ampiamente trattato al capitolo 3.
+\begin{eser}
+	Quali sono le differenze tra i seguenti comandi?\\
+	\begin{multicols}{2}
+		\$ le junk\\
+		\$ ls /\\
+		\$ ls\\
+		\$ ls *\\
+		\$ ls ´*'\\
+		\$ echo junk\\
+		\$ echo /\\
+		\$ echo\\
+		\$ echo *\\
+		\$ echo ´*'
+	\end{multicols}
+\end{eser}

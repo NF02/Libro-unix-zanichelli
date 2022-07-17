@@ -1,5 +1,5 @@
-\babel@toc {italian}{}
-\babel@toc {italian}{}
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}L'UNIX per i principianti}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Come cominciare}{8}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1} Alcuni prerequisiti a proposito di terminali e di dattilo scrittura}{8}{subsection.1.1.1}%
