@@ -31,3 +31,4 @@
 \contentsline {subsection}{\numberline {1.4.1}Abbreviazioni dei nomi di file}{34}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Indirizzamento dell'input / output}{37}{subsection.1.4.2}%
 \contentsline {subsection}{\numberline {1.4.3}Raccordo diretto tra i programmi (\textit {pipes})}{40}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Elaborazioni}{42}{subsection.1.4.4}%

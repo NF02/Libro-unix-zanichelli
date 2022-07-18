@@ -1450,7 +1450,7 @@ file o da un raccordo diretto. Analogamente, per quanto riguarda l'emissione, la
 maggior parte dei comandi produce output per default sul terminale. Anche le emis.
 sioni possono però essere inviate a un file oppure a un raccordo diretto.\\
 I messaggi d'errore da parte dei comandi, tuttavia, devono essere gestiti in modo
-diverso, altrimenti possono scomparire dentro a un file oppure lungo un raccordo diretto. Così, per ogni comando, il mezzo standard per l'emissione della segnalazione d'errore è il terminale.\\
+diverso, altrimenti possono scomparire dentro a un file oppure lungo un raccordo diretto. Così, per ogni comando, il \textit{mezzo} standard per l'emissione della segnalazione d'errore è il terminale.\\
 Per chiarire graficamente quanto sopra:
 \begin{figure}[!ht]
 	\centering
@@ -1461,3 +1461,19 @@ Per chiarire graficamente quanto sopra:
 	\caption{il mezzo strandard per l'emissione del segnale è il terminale}
 \end{figure}
 
+
+La maggior parte dei comandi di cui abbiamo parlato finora rispetta lo schema sopra
+descritto; le uniche eccezioni sono date dai comandi quali date e who che non leggono
+nessun tipo di immissione, e da alcuni altri come cmp e diff che hanno un numero fisso
+di immissioni da file. (Ma consultate l'opzione ``-'' di questi comandi).
+\begin{eser}
+	Spiegate la differenza tra:
+	\lstinline|\$ who, sort|\\
+	e\\
+	\lstinline|\$ who > sort|
+\end{eser}
+\subsection{Elaborazioni}
+L'interprete svolge parecchie altre funzioni oltre all'organizzazione dei raccordi diretti. Dedichiamoci brevemente alla trattazione degli elementi basilari relativi alla gestione di più programmi contemporaneamente, poiché ne abbiamo accennato rapidamente parlando dei raccordi diretti. Per esempio, è possibile far girare due programmi, scrivendo una sola riga di istruzione, se si separano i due comandi con un punto e
+virgola; l'interprete riconosce il punto e virgola e suddivide la riga di istruzione nei due comandi indicati\\\\
+\lstinline|\$ date; who|\\
+\texttt{Tue Sep 27 01:03:17 EDT 1983}
