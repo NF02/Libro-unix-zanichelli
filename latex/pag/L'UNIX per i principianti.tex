@@ -1314,3 +1314,150 @@ Se volete far si che i caratteri *, ?, ecc., non siano interpretati come modalit
 		\$ echo ´*'
 	\end{multicols}
 \end{eser}
+\subsection{Indirizzamento dell'input / output}
+La maggior parte dei comandi visti finora produce l'emissione di dati/informazioni sul terminale; alcuni, come l'editor, dal terminale ottengono anche le immissio.
+ni. È quasi universale il fatto che il terminale può essere sostituito da un file per ciascuna o per entrambe le operazioni di immissione o di emissione. A titolo di esempio
+ricordiamo che:
+\begin{multicols}{2}
+	\$ ls
+\end{multicols}
+provoca l'emissione di un elenco di nomi di file sul vostro terminale. Ma se voi dite
+invece:
+\begin{multicols}{2}
+	\$ Is > filelist
+\end{multicols}
+la stessa lista di nomi sarà invece inserita nel file filelist. Il simbolo > significa "'emissione nel seguente file, invece che sul terminale". Se non esiste già, il file verrà creato;
+se esiste, le informazioni immesse andranno a cancellare quelle precedenti. Nulla apparirà sul terminale. Un altro esempio: potete raggruppare più file in uno usando il
+comando cat e inviandone l'emissione su un singolo file:
+\begin{multicols}{2}
+	\$ cat 11 12 13 > temp
+\end{multicols}
+Il simbolo >> si comporta praticamente come il simbolo > , salvo che significa "aggiungi alla fine di'. Vale a dire che:
+\begin{multicols}{2}
+	\$ cat 11 12 13 >> temp
+\end{multicols}
+copia il contenuto dei file f1, f2 e f3 e lo aggiunge in fondo a quanto è già registrato nel
+file temp anziché cancellarne il contenuto con la nuova immissione. Analogamente a
+quanto avviene con il simbolo >
+, se il file temp non esiste, il sistema lo crea vuoto
+inizialmente.\\
+Così, pure il simbolo < significa "prendi le informazioni che servono a un deter-
+minato programma dal seguente file invece che dal terminale." Quindi, potete prepa-
+rare una lettera nel file let, e inviarla a vari destinatari nel modo seguente:
+\begin{multicols}{2}
+	\$ mail mary joe tom bob < let
+\end{multicols}
+In tutti gli esempi sopra descritti gli spazi sia a sinistra che a destra dei simboli > e <
+sono facoltativi, ma noi siamo ortodossi nel redigere le istruzioni.\\
+Avendo la possibilità di cambiare, con il simbolo >, la destinazione o
+ la provenienza alle emissioni, è anche possibile combinare i vari comandi per raggiungere risultati non altrimenti ottenibili.\\
+Ad esempio, per ottenere la stampa di un elenco alfabetico di utenti:\\\\
+\$ who > temp\\
+\$ sort <temp\\\\
+Poiché il comando who stampa una riga per ogni utente collegato, e \lstinline|wc-1| conta le righe (\textit{ma non le parole e i caratteri}), potete contare gli utenti come segue:\\\\
+\$ ls > temp\\
+\$ wc -l < temp\\\\
+e il file temp suddetto sarà compreso nel conteggio. I nomi dei file possono essere
+stampati su tre colonne con il seguente comando:\\\\
+\$ Is > temp\\
+\$ pr-3 < temp\\\\
+Potete anche controllare se un determinato utente è collegato tramite una combinazione dei comandi \lstinline|who| e \lstinline|grep|, cosi:\\\\
+\$ who > temp\\
+\$ grep mary < temp\\\\
+Per quanto riguarda le modalità e la sintassi sopra usate, come nel caso dell'utilizzo
+dell' asterisco, è importante ricordare che la decodifica dei simboli > e < viene effettuata dall'interprete e non dai singoli programmi. La centralizzazione di questo servizio nell'interprete consente di effettuare operazioni di cambio di indirizzamento
+dell'input/output con qualsiasi programma; il programma in sé, infatti, non viene
+coinvolto in questa particolare attività. Ed è giunto il momento di parlare di una importante convenzione. Il comando:\\\\
+\$ sort < temp\\\\
+seleziona il contenuto del file \lstinline|temp|, così come fa:\\\\
+\$ sort temp\\\\
+ma c'è una differenza. Poiché nel primo caso la stringa < temp viene interpretata dal
+programma interprete, il comando sort non considera il nome temp come un proprio
+argomento; effettua quindi la selezione dal terminale a cui l'interprete ha inviato il
+contenuto del file. Nell'ultimo esempio, invece, temp è argomento di sort, che legge il
+file e lo seleziona. A sort è possibile assegnare, come argomento, un elenco di nomi di
+file, come nell'esempio seguente:\\\\
+\$ sort temp1 temp2 temp3\\\\
+ma se non viene indicato nessun nome di file, il comando seleziona l'immissione del
+terminale. Ricordate che questa è una proprietà essenziale della maggior parte dei comandi: se non viene specificato nessun nome di file, il sistema elabora quanto immesso dal terminale. Ciò significa che potete semplicemente battere dei comandi per
+vedere come funzionano. Per esempio:\\\\
+\begin{tabular}{l}
+	\$ \lstinline|sort|\\
+	ghi\\
+	abc\\
+	def\\
+	ctl-d\\
+	abc\\
+	def\\
+	ghi\\
+	\$ 
+\end{tabular}\\\\
+Nel prossimo paragrafo vedremo come questo principio viene sfruttato.
+\begin{eser}
+	Spiegate perché\\
+	\$ \lstinline|Is > Is.out|\\
+	fa si che il file \lstinline|Is.out| sia incluso nell'elenco di nomi prodotto.
+\end{eser}
+\begin{eser}
+	Spiegate cosa succede immettendo:\\
+	\lstinline|\$ wc temp > temp|\\
+	Se sbagliate a battere il nome di un comando, come nel caso seguente:\\
+	\lstinline|\$ woh > temp|\\
+	cosa succede?
+\end{eser}
+\subsection{Raccordo diretto tra i programmi (\textit{pipes})}
+Tutti gli esempi riportati alla fine del paragrafo precedente si basano sul medesimo
+principio, che consiste nel rendere l'emissione di un programma immissione per un
+altro tramite un file temporaneo. Ma tale file temporaneo non ha altre funzioni e, in
+effetti, è macchinoso dovervi ricorrere. Questa considerazione ci porta a trattare uno
+degli aspetti fondamentali del sistema UNIX, cioè il concetto di raccordo diretto. Un
+raccordo non è altro che un modo per collegare l'emissione di un programma all'immissione di un altro senza dover ricorrere ai file temporanei; una linea di raccordo
+(pipeline) è un collegamento di due o più programmi tramite i raccordi.\\
+Proviamo ora a riprendere in considerazione alcuni degli esempi sopra descritti
+usando i raccordi anziché i file temporanei. Per far ciò è necessario ricorrere al carattere | che dice all'interprete di predisporre una linea di raccordo:
+\begin{multicols}{2}
+	\$ who | sort\\
+	\$ who | wc -e\\
+	\$ ls | wc -e \\
+	\$ ls | pr -3\\
+	\$ who | grep many \\
+	{\it Stampa l'elenco selezionato degli utenti\\
+		Conta gli utenti\\
+		Conta i file\\
+		Elenca i nomi di file su 3 colonne\\
+		Controlla se un determinato utente è collegato}
+\end{multicols}
+Qualunque programma che sia in grado di leggere da un terminale è anche in grado di
+leggere da un raccordo; lo stesso vale per quanto riguarda le operazioni di scrittura. E
+sono questi i casi dove la convenzione secondo cui se non vengono indicati nomi di
+file il comando deve leggere dal terminale dimostra tutta la sua validità: perché qualunque programma che rispetti tale convenzione può essere usato con le linee di raccordo. I comandi grep, pr, sort e wc sono tutti usati in tal modo nelle suddette linee di
+raccordo.\\
+In una linea di raccordo si possono inserire quanti programmi si vuole. Con:\\\\
+\lstinline|\$ ls | pr -3 | 1pr|\\\\
+si ottiéne la stampa di un elenco di nomi di file su tre colonne, e con:\\\\
+\lstinline|\$ who | grep many | wc -1 |\\\\
+il sistema ci dice quante volte l'utente mary si è collegato.\\
+I programmi collegati da una linea di raccordo, in effetti, girano contemporaneamente, e non uno dopo l'altro. Ciò significa che possono essere interattivi; il nucleo
+centrale del sistema si occupa di tutte le operazioni di tempificazione e di sincronizzazione necessarie perché tutto funzioni.\\
+Come probabilmente avrete sospettato giunti a questo punto, è il programma interprete che organizza le operazioni quando richiedete un raccordo diretto; i singoli
+programmi non si accorgono degli eventuali cambiamenti di destinazione o provenienza delle immissioni/emissioni. E evidente che i programmi devono rispettare un
+determinato schema sintattico se devono potersi combinare in questo modo. La maggior parte dei comandi segue la stessa sintassi per potersi adattare alle linee di raccordi, in qualunque posizione. La sintassi normale con cui si richiama un comando è:
+\begin{multicols}{2}
+	{\it comando argomenti'facoltativi nomi di file-facoltativi}\\
+\end{multicols}
+Se non vengono forniti nomi di file, il comando legge dal mezzo standard di immissione, che per default è il terminale (comodo per fare esperimenti). Il mezzo di immissione può essere cambiato, come abbiamo visto, e quindi si può ricevere l'input da un
+file o da un raccordo diretto. Analogamente, per quanto riguarda l'emissione, la
+maggior parte dei comandi produce output per default sul terminale. Anche le emis.
+sioni possono però essere inviate a un file oppure a un raccordo diretto.\\
+I messaggi d'errore da parte dei comandi, tuttavia, devono essere gestiti in modo
+diverso, altrimenti possono scomparire dentro a un file oppure lungo un raccordo diretto. Così, per ogni comando, il mezzo standard per l'emissione della segnalazione d'errore è il terminale.\\
+Per chiarire graficamente quanto sopra:
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\node[] (pic) at (0,0)
+		{\includegraphics[height=6cm]{img/pdf/grafpag34.pdf}};
+	\end{tikzpicture}
+	\caption{il mezzo strandard per l'emissione del segnale è il terminale}
+\end{figure}
+
