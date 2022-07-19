@@ -1,2 +1,2 @@
-# Libro-unix-zanichelli
-questa è la trascrizione del libro della zanichelli 
+# Libro-unix-1984
+questa è la trascrizione del libro di bell labs 
